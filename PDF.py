@@ -1,6 +1,8 @@
 import os
+from fpdf import FPDF
 
-def gen_PDF(events, pdf):
+def gen_PDF(events):
+    pdf = FPDF('L', 'in', 'Letter')
     for event in events:
         pdf.add_page()
         pdf.set_draw_color(r=0, g=0, b=255)
@@ -22,15 +24,15 @@ def gen_PDF(events, pdf):
             events[event].time, events[event].location), 0, 'L')
         pdf.set_xy(1, 4.5)
         pdf.multi_cell(4.5, .22, 'Inputs: \n{}\nOutputs: \n{}'.format(
-            '  -' + str(events[event].inputs)[1:-1].replace("'", "").replace(',', '\n  -'),
-            '  -' + str(events[event].outputs)[1:-1].replace("'", "").replace(',', '\n  -'), 0, 'L'))
+            '  - ' + str(events[event].inputs)[1:-1].replace("'", "").replace(',', '\n  -'),
+            '  - ' + str(events[event].outputs)[1:-1].replace("'", "").replace(',', '\n  -'), 0, 'L'))
         pdf.set_xy(6.5, 1.5)
         pdf.multi_cell(4.5, .22, 'Chair: {}\n\nMembers: \n{}'.format(
             events[event].chair,
-            '  -' + str(events[event].members)[1:-1].replace("'", "").replace(',', '\n  -'), 0, 'L'))
+            '  - ' + str(events[event].members)[1:-1].replace("'", "").replace(',', '\n  -'), 0, 'L'))
         pdf.set_xy(6.5, 4.5)
         pdf.multi_cell(4.5, .22, 'Agenda: \n{}'.format(
-            '  -' + str(events[event].agenda)[1:-1].replace("'", "").replace(',', '\n  -'), 0, 'L'))
+            '  - ' + str(events[event].agenda)[1:-1].replace("'", "").replace(',', '\n  -'), 0, 'L'))
 
     try:
         pdf.output('exports/test.pdf')

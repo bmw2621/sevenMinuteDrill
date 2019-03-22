@@ -1,18 +1,21 @@
-from BRClasses import *
+from BRClasses import BREventList
 import PDF
 from fpdf import FPDF
+import json
 
-def exec():
+def main():
 
     path = 'data/data.p'
 
     battle_rhythm = BREventList()
     battle_rhythm.load_data(path)
 
-    pdf = FPDF('L', 'in', 'Letter')
-    PDF.gen_PDF(battle_rhythm.events, pdf)
+    battle_rhythm.add_event()
 
-    #battle_rhythm.save_data(path)
+    PDF.gen_PDF(battle_rhythm.events)
+
+    battle_rhythm.save_data(path)
 
 if __name__ == "__main__":
-    exec()
+    main()
+
