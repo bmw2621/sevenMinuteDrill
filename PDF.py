@@ -1,4 +1,4 @@
-from fpdf import FPDF
+import os
 
 def gen_PDF(events, pdf):
     for event in events:
@@ -32,4 +32,8 @@ def gen_PDF(events, pdf):
         pdf.multi_cell(4.5, .22, 'Agenda: \n{}'.format(
             '  -' + str(events[event].agenda)[1:-1].replace("'", "").replace(',', '\n  -'), 0, 'L'))
 
-    pdf.output('test.pdf')
+    try:
+        pdf.output('exports/test.pdf')
+    except FileNotFoundError:
+        os.mkdir('exports')
+        pdf.output('exports/test.pdf')

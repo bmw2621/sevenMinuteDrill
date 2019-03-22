@@ -12,7 +12,6 @@ def exec():
     pdf = FPDF('L', 'in', 'Letter')
     PDF.gen_PDF(battle_rhythm.events, pdf)
 
-
     #battle_rhythm.save_data(path)
 
 if __name__ == "__main__":
