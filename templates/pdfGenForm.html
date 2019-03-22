@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>Battle Rhythm Build</title>
+</head>
+<body>
+<form>
+    <div class=container">
+        <div class="row">
+            <div class="jumbotron bg-secondary text-light text-monospace">
+                <center>
+                <h1 class="display-6">Generate PDF of Battle Rhythm</h1>
+                <p class="lead">Select the images that will appear in the corners of the quad chart, and select the
+                appropriate border color.  Enter a filename and export!</p>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text text-monospace" id="inputGroupFileAddon01">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input text-monospace" id="leftImageSelector" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label text-monospace" for="leftImageSelector">Choose Left Image</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col" align="Center"></div>
+            <div class="col">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text text-monospace" id="inputGroupFileAddon01">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input text-monospace" id="rightImageSelector" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label text-monospace" for="rightImageSelector">Choose Right Image</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-6">
+                <div class="form-group" align="Center">
+                    <label class="text-monospace" for="borderColorSelector">Choose Border Color</label>
+                    <input type="color" class="form-control-file" id="borderColorSelector">
+                </div>
+                <input class="form-control form-control-lg text-monospace text-center" type="text" placeholder="Enter Filename">
+                <br><center><button type="submit" class="btn btn-secondary text-monospace">Export PDF</button></center>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
