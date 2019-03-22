@@ -1,4 +1,6 @@
 from BRClasses import *
+import PDF
+from fpdf import FPDF
 
 def exec():
 
@@ -7,7 +9,8 @@ def exec():
     battle_rhythm = BREventList()
     battle_rhythm.load_data(path)
 
-
+    pdf = FPDF('L', 'in', 'Letter')
+    PDF.gen_PDF(battle_rhythm.events, pdf)
 
 
     #battle_rhythm.save_data(path)

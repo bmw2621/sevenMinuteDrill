@@ -60,5 +60,3 @@ class BREventList:
         del self.events[del_event]
 
 
-class PDF(FPDF):
-    pass
