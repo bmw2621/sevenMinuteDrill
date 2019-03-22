@@ -8,3 +8,5 @@ Application receives data on army  staff battle rhythm events and generates a 7-
 - [ ] Eliminate Hard Coded Colors (make user preference in App)
 - [ ] Add functionality to PDF Generation - Week Battle Rhythm Calendar
 - [ ] Expand this list because there are a lot of subtasks to these tasks
+
+![Screenshot](images/screenshot.jpg)
